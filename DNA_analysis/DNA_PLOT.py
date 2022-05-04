@@ -1,5 +1,5 @@
 #Plotting script for dna results for indiviual systems and you can label each plot with respective segments of protein 
-#python all_residue.py input.pdb DNA.txt file
+#python DNA_PLOT.py input.pdb DNA.txt
 import sys
 import numpy as np
 import mdtraj as mdt
