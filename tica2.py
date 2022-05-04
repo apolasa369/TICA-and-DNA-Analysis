@@ -1,14 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import mdshare
-import pyemma
+import mdshare # pip install mdshare
+import pyemma # pip install pyemma
 import sys
 from matplotlib import cm
 
 #pdb = mdshare.fetch('alanine-dipeptide-nowater.pdb', working_directory='data')
 #files = mdshare.fetch('alanine-dipeptide-*-250ns-nowater.xtc', working_directory='data')
-pdb = sys.argv[1]
-files = sys.argv[2]
+pdb = sys.argv[1] #required pdb file of protein system can be just CA
+files = sys.argv[2] # trajectory (dcd) file or xtc file of trajectory can be used
 fname = sys.argv[2]
 print(pdb)
 print(files)
@@ -19,7 +19,7 @@ prt_name = name_split[0].split('/')
 print(prt_name[-1])
 rep = int(name_split[1])
 chain_name = name_split[1]
-label_dict = {"6al2": {0:"YidC Set 1",1:"YidC Set 2"}
+label_dict = {"6al2": {0:"YidC Set 1",1:"YidC Set 2"} # Please modify lables respective to your systems
              ,"6al2TM": {0:"YidC ΔPD Set 1",1:"YidC ΔPD Set 2"}
              ,"6al2-woloop": {0:"YidC ΔC2 Set 1",1:"YidC ΔC2 Set 2"}
              ,"6al2-woloopTM": {0:"YidC ΔC2 ΔPD Set 1",1:"YidC ΔC2 ΔPD Set 2"}
