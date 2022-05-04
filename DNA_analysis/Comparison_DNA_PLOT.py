@@ -1,3 +1,5 @@
+#Plotting script for dna results to compare between two systems of same protein or family and you can label each plot with respective segments of protein 
+#python Comparison_DNA_PLOT.py inputq.pdb input2.pdb DNA1.txt DNA2.txt
 import sys
 from itertools import combinations
 import mdtraj as md
