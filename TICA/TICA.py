@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+#
+# Calculate Time-lagged independent component analysis (tICA)protein MD trajectory
+#
+# Requires the package mdshare and pyemma 
+#python TICA.py input.pdb input.dcd output_prefix
+
 import matplotlib.pyplot as plt
 import numpy as np
 import mdshare # pip install mdshare
