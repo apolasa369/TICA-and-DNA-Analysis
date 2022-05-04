@@ -39,22 +39,20 @@ data = pyemma.coordinates.load(files, features=feat)
 
 print('We have {} features.'.format(feat.dimension()))
 
-#pca = pyemma.coordinates.pca(data, dim=2)
+#pca = pyemma.coordinates.pca(data, dim=2) # This command does PCA analysis for given trajectory
 tica = pyemma.coordinates.tica(data, lag=3, dim=2)
 
-#pca_concatenated = np.concatenate(pca.get_output())
+#pca_concatenated = np.concatenate(pca.get_output()) #PCA output
 tica_concatenated = np.concatenate(tica.get_output())
 
-#np.savetxt('%s.txt', % output_prefix, tica_concatenated, fmt='%1.3f', newline=", ")
-
-#cls_pca = pyemma.coordinates.cluster_kmeans(pca, k=100, max_iter=50, stride=10)
-#cls_tica = pyemma.coordinates.cluster_kmeans(tica, k=3, max_iter=50, stride=10)
+#cls_pca = pyemma.coordinates.cluster_kmeans(pca, k=100, max_iter=50, stride=10) #kmean clusters of resulted each observation belongs to the cluster with the nearest mean of PCA
+#cls_tica = pyemma.coordinates.cluster_kmeans(tica, k=3, max_iter=50, stride=10) #kmean clusters of resulted each observation belongs to the cluster with the nearest mean of TICA
 
 #its_pca = pyemma.msm.its(
  #   cls_pca.dtrajs, lags=[1, 2, 5, 10, 20, 50], nits=4, errors='bayes')
 #its_tica = pyemma.msm.its(
  #   cls_tica.dtrajs, lags=[1, 2, 5, 10, 20, 50], nits=4, errors='bayes')
-def plot_map(title, output_prefix):
+def plot_map(title, output_prefix): # the below code is for ploting please make required changes to get PCA anlysis aswell.
    fig, axes = plt.subplots(1, 1, figsize=(6, 6))
    title1 = plt.title(title, fontsize=30,y=1.08)
  #  pyemma.plots.plot_feature_histograms(pca_concatenated, ax=axes[0, 0])
